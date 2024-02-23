@@ -3,9 +3,9 @@ PROGRAM-ID. CalculPerimetre.
 
 DATA DIVISION.
 WORKING-STORAGE SECTION.
-01 Longueur       PIC 9(4).
-01 Largeur        PIC 9(4).
-01 Perimetre      PIC 9(3).
+01 Longueur       PIC 9(3).
+01 Largeur        PIC 9(3).
+01 Perimetre      PIC 9(4).
 
 PROCEDURE DIVISION.
     DISPLAY "Entrez la longueur du jardin (en mètres) : ".
