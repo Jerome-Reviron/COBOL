@@ -11,14 +11,14 @@ PROCEDURE DIVISION.
    DISPLAY "Entrez le montant total de votre achat : ".
    ACCEPT MontantAchat.
 
-   IF MontantAchat < 100
-      DISPLAY "Aucune réduction applicable."
-   ELSE IF MontantAchat <= 500
+   IF MontantAchat > 500
+      COMPUTE Reduction = MontantAchat * 0.10
+      DISPLAY "Réduction de 10% appliquée."
+   ELSE IF MontantAchat > 100
       COMPUTE Reduction = MontantAchat * 0.05
       DISPLAY "Réduction de 5% appliquée."
    ELSE
-      COMPUTE Reduction = MontantAchat * 0.10
-      DISPLAY "Réduction de 10% appliquée."
+      DISPLAY "Aucune réduction applicable."
    END-IF.
 
    COMPUTE MontantFinal = MontantAchat - Reduction.
