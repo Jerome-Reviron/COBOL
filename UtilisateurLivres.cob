@@ -30,14 +30,18 @@ PROCEDURE DIVISION.
       STOP RUN
    END-IF.
 
-   PERFORM VARYING Idx FROM IdxActuel BY 1 UNTIL Idx > (IdxActuel + NombreLivres - 1)
-      DISPLAY "Entrez les informations pour le nouveau livre #" Idx
-      ACCEPT Titre (Idx)
-      ACCEPT Auteur (Idx)
-      ACCEPT AnneePublication (Idx)
-      ACCEPT NbCopies (Idx)
-   END-PERFORM
-
+  PERFORM VARYING Idx FROM IdxActuel BY 1 UNTIL Idx > (IdxActuel + NombreLivres - 1)
+          DISPLAY "Entrez les informations pour le nouveau livre #" Idx
+          DISPLAY "Renseignez le titre:"
+          ACCEPT Titre (Idx)
+          DISPLAY "Renseignez l'auteur:"
+          ACCEPT Auteur (Idx)
+          DISPLAY "Renseignez l'année de publication:"
+          ACCEPT AnneePublication (Idx)
+          DISPLAY "Renseignez le nombre de copies:"
+          ACCEPT NbCopies (Idx)
+  END-PERFORM
+       
    PERFORM AFFICHER-TOUS-LIVRES
 
    STOP RUN.
