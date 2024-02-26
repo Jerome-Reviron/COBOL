@@ -3,10 +3,14 @@ PROGRAM-ID. GestionCompteBancaire.
 
 DATA DIVISION.
 WORKING-STORAGE SECTION.
-   01 SoldeCompte PIC 9(5)V99 VALUE 1000.00.
-   01 Montant PIC 9(5)V99 VALUE 0.
-   01 SoldeAutreCompte PIC 9(5)V99 VALUE 500.00.
+   01 SoldeCompte PIC S9(5)V99 VALUE 1000.00.
+   01 Montant PIC S9(5)V99 VALUE 0.
+   01 SoldeAutreCompte PIC S9(5)V99 VALUE 500.00.
    01 ChoixUtilisateur PIC 9 VALUE 0.
+
+   01 SoldeCompteAffichage PIC ZZZZ9.99.
+
+   01 SoldeAutreCompteAffichage PIC ZZZZ9.99.
 
 PROCEDURE DIVISION.
 
@@ -20,8 +24,6 @@ PROCEDURE DIVISION.
    STOP RUN.
 
 AFFICHER-MENU.
-   DISPLAY "Solde actuel du compte : " SoldeCompte
-   DISPLAY "Solde actuel de l'autre compte : " SoldeAutreCompte
    DISPLAY "Opérations disponibles :"
    DISPLAY "1. Dépôt"
    DISPLAY "2. Retrait"
@@ -71,5 +73,7 @@ VIREMENT.
    END-IF.
 
 AFFICHER_SOLDE.
-   DISPLAY "Solde actuel du compte : " SoldeCompte.
-   DISPLAY "Solde actuel de l'autre compte : " SoldeAutreCompte.
+MOVE SoldeCompte TO SoldeCompteAffichage.
+MOVE SoldeAutreCompte TO SoldeAutreCompteAffichage.
+DISPLAY "Solde actuel du compte : " SoldeCompteAffichage.
+DISPLAY "Solde actuel de l'autre compte : " SoldeAutreCompteAffichage.
