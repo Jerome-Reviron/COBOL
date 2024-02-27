@@ -4,9 +4,12 @@ PROGRAM-ID. GestionCompteBancaire.
 ENVIRONMENT DIVISION.
 INPUT-OUTPUT SECTION.
 FILE-CONTROL.
-    SELECT GCBComptesFile ASSIGN TO "GCBComptesFile.txt".
-    SELECT GCBHistoriqueFile ASSIGN TO "GCBHistoriqueFile.txt".
-
+    SELECT GCBComptesFile 
+        FILE STATUS IS WS-FILE-STATUS
+        ASSIGN TO "GCBComptesFile.txt".
+    SELECT GCBHistoriqueFile 
+        FILE STATUS IS WS-FILE-STATUS
+        ASSIGN TO "GCBHistoriqueFile.txt".
 DATA DIVISION.
 FILE SECTION.
    FD GCBComptesFile.
@@ -19,6 +22,7 @@ FILE SECTION.
       05 MontantFile PIC ZZZZ9.99 VALUE 0.
        
 WORKING-STORAGE SECTION.
+   01 WS-FILE-STATUS PIC 99.
    01 Montant PIC S9(5)V99 VALUE 0.
    01 ChoixUtilisateur PIC 9 VALUE 0.
    01 SoldeCompte PIC S9(5)V99 VALUE 1000.00.
@@ -32,10 +36,18 @@ WORKING-STORAGE SECTION.
    01 Action PIC X(10).
 
 PROCEDURE DIVISION.
+   OPEN INPUT GCBComptesFile.
+   IF WS-FILE-STATUS = 35
+      CLOSE GCBComptesFile
+      CLOSE GCBHistoriqueFile
+      OPEN OUTPUT GCBComptesFile
+      OPEN OUTPUT GCBHistoriqueFile
+   END-IF.
+
    OPEN I-O GCBComptesFile.
    PERFORM LIRE-DERNIER-SOLDE
    CLOSE GCBComptesFile
-   
+
    OPEN EXTEND GCBComptesFile.
    OPEN EXTEND  GCBHistoriqueFile.
 
