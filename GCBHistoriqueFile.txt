@@ -1,3 +1,4 @@
 
-DEPOT        50.00
-RETRAIT      30.00
+DEPOT        20.00
+
+DEPOT        20.00

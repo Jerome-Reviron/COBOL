@@ -32,8 +32,11 @@ WORKING-STORAGE SECTION.
    01 Action PIC X(10).
 
 PROCEDURE DIVISION.
-
-   OPEN OUTPUT GCBComptesFile.
+   OPEN I-O GCBComptesFile.
+   PERFORM LIRE-DERNIER-SOLDE
+   CLOSE GCBComptesFile
+   
+   OPEN EXTEND GCBComptesFile.
    OPEN EXTEND  GCBHistoriqueFile.
 
    PERFORM AFFICHER-MENU
@@ -120,3 +123,9 @@ AFFICHER_SOLDE.
    MOVE SoldeAutreCompte TO SoldeAutreCompteAffichage.
    DISPLAY "Solde actuel du compte : " SoldeCompteAffichage.
    DISPLAY "Solde actuel de l'autre compte : " SoldeAutreCompteAffichage.
+
+LIRE-DERNIER-SOLDE.
+   READ GCBComptesFile NEXT RECORD 
+      AT END MOVE 1000 TO SoldeCompte
+      NOT AT END MOVE SoldeCompteFile TO SoldeCompte
+   END-READ.
