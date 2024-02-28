@@ -4,6 +4,7 @@ PROGRAM-ID. CalculReductions.
 DATA DIVISION.
 WORKING-STORAGE SECTION.
    01 MontantAchat PIC 9(5)V99 VALUE 0.
+   01 ReductionPercentage PIC 9(3)V99 VALUE 0.
    01 Reduction PIC 9(3)V99 VALUE 0.
    01 MontantFinal PIC 9(3)V99 VALUE 0.
 
@@ -12,11 +13,18 @@ PROCEDURE DIVISION.
    ACCEPT MontantAchat.
 
    IF MontantAchat > 500
-      COMPUTE Reduction = MontantAchat * 0.10
-      DISPLAY "Réduction de 10% appliquée."
-   ELSE IF MontantAchat > 100
-      COMPUTE Reduction = MontantAchat * 0.05
-      DISPLAY "Réduction de 5% appliquée."
+      THEN
+         MOVE 10 TO ReductionPercentage
+   ELSE IF MontantAchat >= 100
+      THEN
+         MOVE 5 TO ReductionPercentage
+   END-IF.
+
+   COMPUTE Reduction = MontantAchat * (ReductionPercentage / 100).
+
+   IF ReductionPercentage > 0
+      THEN
+         DISPLAY "Réduction de " ReductionPercentage " % appliquée."
    ELSE
       DISPLAY "Aucune réduction applicable."
    END-IF.
