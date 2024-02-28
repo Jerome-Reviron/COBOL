@@ -38,21 +38,16 @@ PROCEDURE DIVISION.
    CALL 'GCB_LECTURE' USING SoldeCompte.
    CALL 'GCB_AFFICHAGE' USING SoldeCompte  SoldeAutreCompte.
    CALL 'GCB_MENU' USING SoldeCompte SoldeAutreCompte Montant ChoixUtilisateur.
+   CALL 'GCB_WRITE' USING Action Montant SoldeCompte.
 
    OPEN I-O GCBComptesFile.
    CALL 'GCB_LECTURE' USING SoldeCompte.
    CLOSE GCBComptesFile.
 
-   OPEN OUTPUT GCBComptesFile.
-   OPEN EXTEND GCBHistoriqueFile.
-
    PERFORM UNTIL ChoixUtilisateur = 0
        PERFORM TRAITER-CHOIX
        CALL 'GCB_MENU' USING SoldeCompte SoldeAutreCompte Montant ChoixUtilisateur
    END-PERFORM.
-
-   CLOSE GCBComptesFile
-   CLOSE GCBHistoriqueFile.
 
    DISPLAY "Merci d'avoir utilisé notre service. Au revoir!"
    STOP RUN.
@@ -77,13 +72,9 @@ DEPOT.
    DISPLAY "Entrez le montant du dépôt : ".
    ACCEPT Montant.
    COMPUTE SoldeCompte = SoldeCompte + Montant.
-   MOVE "DEPOT" TO ActionFile.
-   MOVE Montant TO MontantAffichage.
-   MOVE MontantAffichage TO MontantFile. 
-   WRITE HistoriqueRecord AFTER ADVANCING 1 LINE.
-   MOVE SoldeCompte TO SoldeCompteAffichage.
-   WRITE ComptesRecord FROM SoldeCompteAffichage AFTER ADVANCING 1 LINE.
-       
+   MOVE "DEPOT" TO Action.
+   CALL 'GCB_WRITE' USING Action Montant SoldeCompte.
+
 RETRAIT.
    DISPLAY "Entrez le montant du retrait : ".
    ACCEPT Montant.
@@ -91,12 +82,8 @@ RETRAIT.
       DISPLAY "Solde insuffisant. Opération annulée."
    ELSE
       COMPUTE SoldeCompte = SoldeCompte - Montant
-      MOVE "RETRAIT" TO ActionFile
-      MOVE Montant TO MontantAffichage
-      MOVE MontantAffichage TO MontantFile
-      WRITE HistoriqueRecord AFTER ADVANCING 1 LINE
-      MOVE SoldeCompte TO SoldeCompteAffichage
-      WRITE ComptesRecord FROM SoldeCompteAffichage AFTER ADVANCING 1 LINE
+      MOVE "RETRAIT" TO Action
+      CALL 'GCB_WRITE' USING Action Montant SoldeCompte
    END-IF.
 
 VIREMENT.
@@ -107,10 +94,6 @@ VIREMENT.
    ELSE
       COMPUTE SoldeCompte = SoldeCompte - Montant
       COMPUTE SoldeAutreCompte = SoldeAutreCompte + Montant
-      MOVE "VIREMENT" TO ActionFile
-      MOVE Montant TO MontantAffichage
-      MOVE MontantAffichage TO MontantFile
-      WRITE HistoriqueRecord AFTER ADVANCING 1 LINE
-      MOVE SoldeCompte TO SoldeCompteAffichage
-      WRITE ComptesRecord FROM SoldeCompteAffichage AFTER ADVANCING 1 LINE
+      MOVE "VIREMENT" TO Action
+      CALL 'GCB_WRITE' USING Action Montant SoldeCompte
    END-IF.
