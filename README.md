@@ -7,8 +7,8 @@
 - [Contribuer](#contribuer)
 - [Licence](#licence)
 - [Helloworld.cob](#Helloworld)
+- [JardinPerimetre.cob](#JardinPerimetre)
 - [CalculReductions.cob](#CalculReductions)
-- [Programme 3](#programme-3)
 - [Programme 4](#programme-4)
 - [Programme 5](#programme-5)
 - [Programme 6](#programme-6)
@@ -30,10 +30,10 @@ Tous les droits sont réservés à l'auteur du repository, REVIRON Jérôme.
 
 # Helloworld.cob <a name="Helloworld"></a>
 
-## Introduction
+### Introduction
 Le fichier "helloworld.cob" est un programme COBOL illustrant le célèbre exemple "Hello, World!". Ce fichier met en œuvre la syntaxe COBOL de base pour afficher un message à l'écran et manipuler une variable simple.
 
-## Fonctionnalités
+### Fonctionnalités
 
 - **Affichage du Message "Hello, World!"**:
   Le programme affiche le message emblématique "Hello, World!" à l'écran.
@@ -41,7 +41,7 @@ Le fichier "helloworld.cob" est un programme COBOL illustrant le célèbre exemp
 - **Manipulation d'une Variable**:
   Le fichier contient une variable `premierevariable` initialisée à zéro, puis sa valeur est affichée, modifiée à 2, et à nouveau affichée.
 
-## Utilisation
+### Utilisation
 
 1. **Exécution du Programme**:
    Le programme est exécuté pour afficher le message "Hello, World!".
@@ -49,7 +49,7 @@ Le fichier "helloworld.cob" est un programme COBOL illustrant le célèbre exemp
 2. **Manipulation de Variable**:
    La variable `premierevariable` est affichée, mise à jour, puis à nouveau affichée pour illustrer la manipulation de données.
 
-## Particularités
+### Particularités
 
 - **Structure COBOL**:
   Le fichier suit la structure COBOL conventionnelle avec les divisions IDENTIFICATION, ENVIRONMENT, DATA, et PROCEDURE. Il utilise la section WORKING-STORAGE pour déclarer des variables.
@@ -59,6 +59,47 @@ Le fichier "helloworld.cob" est un programme COBOL illustrant le célèbre exemp
 
 - **Syntaxe COBOL**:
   La syntaxe COBOL est utilisée pour déclarer des sections telles que IDENTIFICATION DIVISION, DATA DIVISION, et PROCEDURE DIVISION, montrant la structure typique d'un programme COBOL de base.
+
+# JardinPerimetre.cob <a name="JardinPerimetre"></a>
+
+### Introduction
+Le fichier "JardinPerimetre.cob" est un programme COBOL conçu pour calculer le périmètre d'un jardin en fonction de sa longueur et de sa largeur. Ce programme demande à l'utilisateur d'entrer la longueur et la largeur du jardin, effectue le calcul du périmètre, puis affiche le résultat.
+
+### Fonctionnalités
+
+- **Saisie de la Longueur et de la Largeur**:
+  Le programme demande à l'utilisateur d'entrer la longueur et la largeur du jardin.
+
+- **Calcul du Périmètre**:
+  Le périmètre du jardin est calculé en utilisant la formule : `Perimetre = 2 * (Longueur + Largeur)`.
+
+- **Affichage du Résultat**:
+  Le périmètre calculé est affiché à l'utilisateur.
+
+### Utilisation
+
+1. **Saisie de la Longueur**:
+   L'utilisateur est invité à entrer la longueur du jardin en mètres.
+
+2. **Saisie de la Largeur**:
+   L'utilisateur est invité à entrer la largeur du jardin en mètres.
+
+3. **Calcul et Affichage du Périmètre**:
+   Le programme calcule le périmètre en fonction de la longueur et de la largeur fournies, puis affiche le résultat.
+
+### Particularités
+
+- **Structure COBOL**:
+  Le fichier suit la structure COBOL conventionnelle avec les divisions IDENTIFICATION, DATA, et PROCEDURE. Il utilise la section WORKING-STORAGE pour déclarer les variables.
+
+- **Saisie Utilisateur**:
+  Le programme utilise l'instruction DISPLAY suivie d'ACCEPT pour obtenir les valeurs de longueur et de largeur auprès de l'utilisateur.
+
+- **Calcul Arithmétique**:
+  Le périmètre est calculé à l'aide de l'instruction COMPUTE en fonction de la formule spécifiée.
+
+- **Affichage du Résultat**:
+  Le résultat, c'est-à-dire le périmètre du jardin, est affiché à l'utilisateur à l'aide de l'instruction DISPLAY.
 
 # CalculReductions.cob <a name="CalculReductions"></a>
 
