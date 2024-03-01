@@ -8,8 +8,8 @@
 - [Licence](#licence)
 - [Helloworld.cob](#Helloworld)
 - [JardinPerimetre.cob](#JardinPerimetre)
+- [UtilisateurLivres.cob](#UtilisateurLivres)
 - [CalculReductions.cob](#CalculReductions)
-- [Programme 4](#programme-4)
 - [Programme 5](#programme-5)
 - [Programme 6](#programme-6)
 
@@ -100,6 +100,47 @@ Le fichier "JardinPerimetre.cob" est un programme COBOL conçu pour calculer le 
 
 - **Affichage du Résultat**:
   Le résultat, c'est-à-dire le périmètre du jardin, est affiché à l'utilisateur à l'aide de l'instruction DISPLAY.
+  
+# UtilisateurLivres.cob <a name="UtilisateurLivres"></a>
+
+### Introduction
+Le fichier "UtilisateurLivres.cob" est un programme COBOL qui permet à l'utilisateur d'ajouter de nouveaux livres à une liste existante. Le programme initialise une liste de livres, demande à l'utilisateur le nombre de nouveaux livres à ajouter, puis collecte les informations sur ces livres. Enfin, il affiche les détails de tous les livres, y compris les nouveaux ajoutés.
+
+### Fonctionnalités
+
+- **Initialisation de la Liste de Livres**:
+  Le programme initialise une liste de livres avec des données préexistantes.
+
+- **Ajout de Nouveaux Livres**:
+  L'utilisateur peut spécifier le nombre de nouveaux livres à ajouter, puis fournir les informations pour chaque nouveau livre.
+
+- **Affichage de Tous les Livres**:
+  Le programme affiche les détails de tous les livres, y compris ceux nouvellement ajoutés.
+
+### Utilisation
+
+1. **Initialisation de la Liste Actuelle**:
+   Le programme initialise une liste de livres avec des valeurs prédéfinies.
+
+2. **Ajout de Nouveaux Livres**:
+   L'utilisateur est invité à entrer le nombre de nouveaux livres qu'il souhaite ajouter. Pour chaque livre, il doit fournir des informations telles que le titre, l'auteur, l'année de publication et le nombre de copies.
+
+3. **Affichage des Résultats**:
+   Une fois toutes les informations fournies, le programme affiche les détails de tous les livres, y compris les nouveaux ajoutés.
+
+### Particularités
+
+- **Structure de Données**:
+  Le programme utilise une structure de données comprenant un tableau de livres avec des champs tels que Titre, Auteur, Année de Publication et Nombre de Copies.
+
+- **Boucle de Traitement**:
+  Les boucles PERFORM VARYING sont utilisées pour itérer à travers les livres existants et les nouveaux livres ajoutés, affichant ainsi tous les détails.
+
+- **Gestion des Indices**:
+  Les indices (Idx) sont utilisés pour accéder aux éléments spécifiques du tableau des livres, permettant une manipulation efficace des données.
+
+- **Contrôles de Validation**:
+  Le programme effectue des vérifications pour s'assurer que le nombre de livres spécifié par l'utilisateur est valide et qu'il ne dépasse pas la capacité maximale définie (MaxLivres).
 
 # CalculReductions.cob <a name="CalculReductions"></a>
 
