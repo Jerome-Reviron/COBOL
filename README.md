@@ -10,8 +10,8 @@
 - [JardinPerimetre.cob](#JardinPerimetre)
 - [UtilisateurLivres.cob](#UtilisateurLivres)
 - [CalculReductions.cob](#CalculReductions)
-- [Programme 5](#programme-5)
-- [Programme 6](#programme-6)
+- [Exemple_tab_hierarchy.cob](#Exemple_tab_hierarchy)
+- [Exemple_paragraphes.cob](#Exemple_paragraphes)
 
 ## Introduction <a name="introduction"></a>
 Ce repository COBOL a été créé dans le cadre de mon travail de développement en langage COBOL. Il regroupe plusieurs programmes conçus pour répondre à des besoins spécifiques.
@@ -187,3 +187,73 @@ Le fichier "CalculReductions.cob" est un programme COBOL visant à automatiser l
 
 - **Interaction avec l'Utilisateur**:
   L'utilisateur est impliqué par le biais d'une invitation à entrer des données, illustrant l'interaction typique entre un programme COBOL et l'utilisateur.
+
+# Exemple_tab_hierarchy.cob <a name="Exemple_tab_hierarchy"></a>
+
+### Introduction
+Le fichier "exemple_tab_hierarchie.cob" est un programme COBOL illustrant l'utilisation d'un tableau hiérarchique pour stocker des informations sur des produits. Le programme initialise un tableau de produits avec des données préexistantes, puis affiche les détails de chaque produit, y compris le nom et la quantité.
+
+### Fonctionnalités
+
+- **Initialisation du Tableau de Produits**:
+  Le programme initialise un tableau hiérarchique de produits avec des données prédéfinies.
+
+- **Affichage des Détails de Chaque Produit**:
+  Le programme utilise une boucle pour parcourir le tableau de produits et affiche les détails de chaque produit, y compris le nom et la quantité.
+
+### Utilisation
+
+1. **Initialisation du Tableau de Produits**:
+   Le programme initialise un tableau de produits avec des valeurs prédéfinies. Chaque produit a un nom (Nom-Produit) et une quantité (Quantite).
+
+2. **Affichage des Résultats**:
+   Le programme utilise une boucle PERFORM VARYING pour itérer à travers le tableau de produits et affiche les détails de chaque produit, y compris le nom et la quantité.
+
+### Particularités
+
+- **Structure du Tableau Hiérarchique**:
+  Le tableau hiérarchique (Produits) contient plusieurs occurrences de la structure de produit (Produit), chacune ayant des champs tels que Nom-Produit et Quantite.
+
+- **Utilisation d'un Index**:
+  L'index (Idx) est utilisé pour accéder aux différentes occurrences du tableau de produits, permettant ainsi une manipulation efficace des données.
+
+- **Assignation des Valeurs**:
+  Les valeurs des noms de produits (Nom-Produit) et des quantités (Quantite) sont attribuées aux occurrences spécifiques du tableau hiérarchique.
+
+- **Affichage des Résultats**:
+  Les détails de chaque produit, y compris le nom et la quantité, sont affichés à l'aide de l'instruction DISPLAY dans une boucle PERFORM VARYING.
+
+# Exemple_paragraphes.cob <a name="Exemple_paragraphes"></a>
+
+### Introduction
+Le fichier "exemple_paragraphes.cob" est un programme COBOL illustrant l'utilisation de paragraphes dans la division PROCEDURE. Le programme contient plusieurs paragraphes (A-PARA, B-PARA, C-PARA, D-PARA, E-PARA) qui sont appelés et exécutés séquentiellement. Chaque paragraphe effectue une opération spécifique, démontrant ainsi l'utilisation des structures de paragraphe en COBOL.
+
+### Fonctionnalités
+
+- **Paragraphes Sequential Execution**:
+  Les paragraphes A-PARA, B-PARA, C-PARA, D-PARA, E-PARA sont exécutés séquentiellement, chacun effectuant une opération spécifique.
+
+- **Affichage des Messages**:
+  Chaque paragraphe affiche un message à l'écran pour indiquer son exécution. Les messages incluent "A-PARA", "B-PARA", "C-PARA", "D-PARA", "E-PARA".
+
+### Utilisation
+
+1. **Appel Initial du Paragraphe A-PARA**:
+   Le programme commence par appeler le paragraphe A-PARA, qui à son tour appelle les paragraphes C-PARA à E-PARA.
+
+2. **Exécution des Paragraphes C-PARA à E-PARA**:
+   Les paragraphes C-PARA à E-PARA sont exécutés séquentiellement à partir du paragraphe A-PARA.
+
+3. **Affichage des Messages**:
+   Chaque paragraphe affiche un message distinct à l'écran.
+
+### Particularités
+
+- **Structure en Paragraphes**:
+  Le programme est structuré en utilisant des paragraphes, ce qui permet une organisation claire du code et la séparation des fonctionnalités.
+
+- **Appel de Paragraphes**:
+  Les paragraphes sont appelés à l'aide de l'instruction PERFORM, permettant une exécution séquentielle des opérations définies dans chaque paragraphe.
+
+- **Arrêt du Programme**:
+  Le paragraphe B-PARA affiche un message et arrête l'exécution du programme à l'aide de l'instruction STOP RUN.
