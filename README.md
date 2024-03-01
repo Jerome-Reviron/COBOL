@@ -6,29 +6,29 @@
 - [Utilisation](#utilisation)
 - [Contribuer](#contribuer)
 - [Licence](#licence)
-- [CalculReductions.cob](#CalculReductions.cob)
+- [CalculReductions.cob](#CalculReductions)
 - [Programme 2](#programme-2)
 - [Programme 3](#programme-3)
 - [Programme 4](#programme-4)
 - [Programme 5](#programme-5)
 - [Programme 6](#programme-6)
 
-## Introduction
+## Introduction <a name="introduction"></a>
 Ce repository COBOL a été créé dans le cadre de mon travail de développement en langage COBOL. Il regroupe plusieurs programmes conçus pour répondre à des besoins spécifiques.
 
-## Installation
+## Installation <a name="installation"></a>
 Le repository COBOL est accessible publiquement sur GitHub. L'installation est simple, il suffit de cloner le repository sur votre machine locale.
 
-## Utilisation
+## Utilisation <a name="utilisation"></a>
 Le repository contient plusieurs programmes COBOL, chacun ayant une fonction spécifique. Les détails d'utilisation de chaque programme sont fournis dans leurs fichiers respectifs.
 
-## Contribuer
+## Contribuer <a name="contribuer"></a>
 Bien que le repository soit public, les contributions directes ne sont pas autorisées. Cependant, les suggestions, commentaires et retours sont les bienvenus. Pour toute contribution majeure, veuillez me contacter directement.
 
-## Licence
+## Licence <a name="licence"></a>
 Tous les droits sont réservés à l'auteur du repository, REVIRON Jérôme.
 
-# CalculReductions.cob
+# CalculReductions.cob <a name="CalculReductions"></a>
 
 ### Introduction
 Le fichier "CalculReductions.cob" est un programme COBOL visant à automatiser le calcul de réductions en fonction du montant total d'achat. Il utilise une approche de paliers, appliquant des pourcentages de réduction spécifiques en fonction du montant d'achat. Ce fichier démontre la logique de calcul, l'affichage des résultats, et l'interaction avec l'utilisateur, conformément à la syntaxe COBOL.
