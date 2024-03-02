@@ -12,7 +12,7 @@
 - [CalculReductions.cob](#CalculReductions)
 - [Exemple_tab_hierarchy.cob](#Exemple_tab_hierarchy)
 - [Exemple_paragraphes.cob](#Exemple_paragraphes)
-
+- [GCB.cob](#GCB)
 ## Introduction <a name="introduction"></a>
 Ce repository COBOL a été créé dans le cadre de mon travail de développement en langage COBOL. Il regroupe plusieurs programmes conçus pour répondre à des besoins spécifiques.
 
@@ -257,3 +257,51 @@ Le fichier "exemple_paragraphes.cob" est un programme COBOL illustrant l'utilisa
 
 - **Arrêt du Programme**:
   Le paragraphe B-PARA affiche un message et arrête l'exécution du programme à l'aide de l'instruction STOP RUN.
+
+# GCB.cob <a name="GCB"></a>
+
+### Introduction
+Le fichier "GCB.cob" est un programme COBOL de gestion de compte bancaire. Il permet à un utilisateur d'effectuer des opérations telles que le dépôt, le retrait, le virement et l'affichage du solde pour un compte bancaire. Le programme utilise deux fichiers, "GCBComptesFile.txt" pour stocker les soldes des comptes et "GCBHistoriqueFile.txt" pour enregistrer l'historique des transactions.
+
+### Fonctionnalités
+
+- **Opérations de Compte**:
+  Le programme offre les fonctionnalités suivantes :
+  - Dépôt d'argent sur le compte.
+  - Retrait d'argent du compte.
+  - Virement d'argent vers un autre compte.
+  - Affichage du solde du compte.
+
+- **Historique des Transactions**:
+  Chaque opération effectuée est enregistrée dans le fichier d'historique avec des détails tels que l'action effectuée et le montant.
+
+### Utilisation
+
+1. **Initialisation des Fichiers**:
+   Si les fichiers "GCBComptesFile.txt" et "GCBHistoriqueFile.txt" n'existent pas, le programme les crée.
+
+2. **Opérations Utilisateur**:
+   L'utilisateur peut choisir parmi les options du menu, telles que le dépôt, le retrait, le virement, et l'affichage du solde.
+
+3. **Traitement des Choix**:
+   Chaque choix de l'utilisateur est traité, et les soldes sont mis à jour en conséquence.
+
+4. **Historique des Transactions**:
+   Chaque transaction est enregistrée dans le fichier d'historique avec les détails appropriés.
+
+5. **Fin du Programme**:
+   L'utilisateur peut choisir de quitter le programme à tout moment.
+
+### Particularités
+
+- **Gestion des Fichiers**:
+  Le programme gère deux fichiers, l'un pour stocker les soldes des comptes et l'autre pour enregistrer l'historique des transactions.
+
+- **Affichage et Mise à Jour**:
+  Les soldes sont affichés à l'utilisateur après chaque opération, et l'historique est mis à jour en conséquence.
+
+- **Traitement des Erreurs**:
+  Des vérifications sont effectuées pour éviter des opérations invalides, telles que le retrait d'un montant supérieur au solde disponible.
+
+- **Boucle d'Interaction**:
+  Le programme utilise une boucle pour permettre à l'utilisateur d'effectuer plusieurs opérations avant de choisir de quitter le programme.
